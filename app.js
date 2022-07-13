@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 // connect to database
 app.get('/', async (req, res) => {
    try {
-      const conn = await mongoose.connect(process.env.DB_CONNECTION_STRING)
+      await mongoose.connect(process.env.DB_CONNECTION_STRING)
       console.log('connected to DB')
    } catch (error) {
       console.log(error)
