@@ -20,4 +20,4 @@ const postsRoute = require('./routes/Posts')
 app.use('/posts', postsRoute)
 
 
-app.listen(PORT)
+app.listen(PORT || 5000)
