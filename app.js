@@ -4,6 +4,7 @@ const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 require('dotenv/config')
+const PORT = process.env.PORT
 
 app.use(bodyParser.json())
 
@@ -19,4 +20,4 @@ const postsRoute = require('./routes/Posts')
 app.use('/posts', postsRoute)
 
 
-app.listen(5000)
+app.listen(PORT)
