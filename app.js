@@ -9,8 +9,10 @@ const PORT = process.env.PORT
 app.use(bodyParser.json())
 
 // connect to database
-mongoose.connect(process.env.DB_CONNECTION_STRING, () => {
-   console.log('connected')
+app.get('/', (req, res) => {
+   mongoose.connect(process.env.DB_CONNECTION_STRING, () => {
+      console.log('connected')
+   })
 })
 
 // create posts route
