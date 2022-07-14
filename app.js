@@ -21,6 +21,7 @@ const dbConnect = async () => {
 // create get route
 app.get('/', (req, res) => {
    dbConnect()
+   res.status(200)
 })
 
 // create posts route
