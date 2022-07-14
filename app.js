@@ -9,13 +9,18 @@ const PORT = process.env.PORT
 app.use(bodyParser.json())
 
 // connect to database
-app.get('/', async (req, res) => {
+const dbConnect = async () => {
    try {
       await mongoose.connect(process.env.DB_CONNECTION_STRING)
       console.log('connected to DB')
    } catch (error) {
       console.log(error)
    }
+}
+
+// create get route
+app.get('/', (req, res) => {
+   dbConnect()
 })
 
 // create posts route
